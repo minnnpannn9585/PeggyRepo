@@ -8,13 +8,6 @@ public class EnemyAI : MonoBehaviour
     public Transform trans02;
     bool isGoingToTrans01 = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         EnemyMove();
