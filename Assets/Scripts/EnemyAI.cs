@@ -7,10 +7,38 @@ public class EnemyAI : MonoBehaviour
     public Transform trans01;
     public Transform trans02;
     bool isGoingToTrans01 = true;
+    public bool attractedByLight = false;
+    public bool findBulb = false;
+    public Transform brokenLightTrans;
+    public Transform bulbTrans;
 
     void Update()
     {
-        EnemyMove();
+        if(Vector3.Distance(transform.position, brokenLightTrans.position) <= 9f)
+        {
+            attractedByLight = true;
+        }
+
+        if (!attractedByLight)
+        {
+            EnemyMove();
+        }
+        else
+        {
+            if(Vector3.Distance(transform.position, brokenLightTrans.position) >= 2f && !findBulb)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, brokenLightTrans.position, Time.deltaTime);
+                transform.LookAt(brokenLightTrans.position);
+                findBulb = true;
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, bulbTrans.position, Time.deltaTime);
+                transform.LookAt(bulbTrans.position);
+            }
+            
+        }
+        
     }
 
     void EnemyMove()
