@@ -29,6 +29,10 @@ public class EnemyAI : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, brokenLightTrans.position, Time.deltaTime);
                 transform.LookAt(brokenLightTrans.position);
+                
+            }
+            else if (Vector3.Distance(transform.position, brokenLightTrans.position) < 2f && !findBulb)
+            {
                 findBulb = true;
             }
             else

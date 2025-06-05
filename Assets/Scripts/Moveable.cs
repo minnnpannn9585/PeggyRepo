@@ -23,5 +23,7 @@ public class Moveable : MonoBehaviour
         {
             target = target == end.position ? start.position : end.position;
         }
+
+        transform.forward = target - transform.position;
     }
 }
