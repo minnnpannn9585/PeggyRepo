@@ -3,70 +3,70 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class lightmoveableAI : MonoBehaviour
+public class LightMoveableAI : MonoBehaviour
 {
     public NavMeshAgent nma;
-    public Transform[] points;         // Ñ²ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½
-        private int index = 0;             // ï¿½ï¿½Ç°Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    
-        public float speed = 1.0f;         // ï¿½Æ¶ï¿½ï¿½Ù¶ï¿½
-        public float rotationSpeed = 5f;   // ï¿½ï¿½×ªï¿½Ù¶È£ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Æ½ï¿½ï¿½ï¿½È£ï¿½
-        private Vector3 target;            // ï¿½ï¿½Ç°Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    
-        private bool isGoingToLight = false;   // ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Æ¹ï¿½
-        public Transform lightTrans;           // ï¿½Æ¹ï¿½ï¿½Î»ï¿½ï¿½
-    
-        public Animator pointLightAnimator;    // ï¿½Æ¹ï¿½ï¿½ Animator
-        private string flashStateName = "LightBlink";  // ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½
-    
-        private void Start()
+    public Transform[] points;         // Ñ²ÂßÂ·¾¶µã
+    private int index = 0;             // µ±Ç°Ä¿±êµãË÷Òý
+
+    public float speed = 1.0f;         // ÒÆ¶¯ËÙ¶È
+    public float rotationSpeed = 5f;   // Ðý×ªËÙ¶È£¨¿ØÖÆ×ªÏòÆ½»¬¶È£©
+    private Vector3 target;            // µ±Ç°Ä¿±êµã×ø±ê
+
+    private bool isGoingToLight = false;   // ÊÇ·ñÕýÔÚÇ°ÍùµÆ¹â
+    public Transform lightTrans;           // µÆ¹âµÄÎ»ÖÃ
+
+    public Animator pointLightAnimator;    // µÆ¹âµÄ Animator
+    private string flashStateName = "LightBlink";  // ÉÁË¸¶¯»­µÄ×´Ì¬Ãû
+
+    private void Start()
+    {
+        target = points[index].position;
+    }
+
+    private void Update()
+    {
+        // ¼ì²é¶¯»­µ±Ç°ÊÇ·ñ´¦ÓÚÉÁË¸×´Ì¬
+        AnimatorStateInfo animState = pointLightAnimator.GetCurrentAnimatorStateInfo(0);
+        if (animState.IsName(flashStateName))
         {
-            target = points[index].position;
+            isGoingToLight = true;
         }
-    
-        private void Update()
+
+        if (!isGoingToLight)
         {
-            // ï¿½ï¿½é¶¯ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸×´Ì¬
-            AnimatorStateInfo animState = pointLightAnimator.GetCurrentAnimatorStateInfo(0);
-            if (animState.IsName(flashStateName))
+            MoveTowards(target);
+
+            if (Vector3.Distance(transform.position, target) < 0.1f)
             {
-                isGoingToLight = true;
-            }
-    
-            if (!isGoingToLight)
-            {
-                MoveTowards(target);
-    
-                if (Vector3.Distance(transform.position, target) < 0.1f)
+                index++;
+                if (index >= points.Length)
                 {
-                    index++;
-                    if (index >= points.Length)
-                    {
-                        index = 0;
-                    }
-                    target = points[index].position;
+                    index = 0;
                 }
-            }
-            else
-            {
-                MoveTowards(lightTrans.position);
+                target = points[index].position;
             }
         }
-    
-        private void MoveTowards(Vector3 destination)
+        else
         {
-            /*Vector3 direction = destination - transform.position;
-    
-            if (direction != Vector3.zero)
-            {
-                // Æ½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ê·½ï¿½ï¿½
-                Quaternion targetRotation = Quaternion.LookRotation(direction.normalized);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            }*/
-    
-            // ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½
-            //transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-            
-            nma.SetDestination(destination);
+            MoveTowards(lightTrans.position);
         }
+    }
+
+    private void MoveTowards(Vector3 destination)
+    {
+        Vector3 direction = destination - transform.position;
+
+        if (direction != Vector3.zero)
+        {
+            // Æ½»¬Ðý×ª³¯ÏòÄ¿±ê·½Ïò
+            Quaternion targetRotation = Quaternion.LookRotation(direction.normalized);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        // ÏòÄ¿±êÒÆ¶¯
+        transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+
+        nma.SetDestination(destination);
+    }
 }
