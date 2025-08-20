@@ -4,37 +4,67 @@ using UnityEngine;
 
 public class Eyesight : MonoBehaviour
 {
-    public float viewRadius = 50f;            // 视野半径
+    public float viewRadius = 50f;      // 视野半径
     [Range(0, 360)]
-    public float viewAngle = 60f;             // 视野角度
-    public LayerMask targetMask;    // 玩家所在层
+    public float viewAngle = 60f;       // 视野角度
+
+    public LayerMask targetMask;        // 玩家所在层（建议 Inspector 勾 Player）
+    public LayerMask obstructionMask;   // ✅ 新增：遮挡层（墙体/家具等，不包含 Player）
+
+    [Header("视线射线起点（可选）")]
+    public Transform eyePoint;          // 为空时用 transform.position + eyeHeight
+    public float eyeHeight = 1.7f;
+
+    [HideInInspector] public bool playerInSight;  // ✅ 新增：给外部脚本读取
 
     void Start()
     {
-        targetMask = LayerMask.GetMask("Player");
+        if (targetMask == 0)
+            targetMask = LayerMask.GetMask("Player");
+        // obstructionMask 请在 Inspector 里设置（把会遮挡视线的层勾上，不要勾 Player）
     }
-    
+
     void Update()
     {
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+        playerInSight = false; // 每帧重置
 
+        // 在视野半径内找玩家
+        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         foreach (Collider target in targetsInViewRadius)
         {
             Transform player = target.transform;
-            Vector3 dirToPlayer = (player.position - transform.position).normalized;
+            Vector3 toPlayer = (player.position - (eyePoint ? eyePoint.position : GetEyePos())).normalized;
 
-            if (Vector3.Angle(transform.forward, dirToPlayer) < viewAngle / 2f)
+            // 角度判断
+            if (Vector3.Angle((eyePoint ? eyePoint.forward : transform.forward), toPlayer) < viewAngle / 2f)
             {
-                float distToPlayer = Vector3.Distance(transform.position, player.position);
+                float distToPlayer = Vector3.Distance((eyePoint ? eyePoint.position : GetEyePos()), player.position);
 
-                if (!Physics.Raycast(transform.position, dirToPlayer, distToPlayer))
+                // ✅ 关键改动：只用“遮挡层”做 Raycast，忽略玩家自身
+                // 如果射线没有击中任何遮挡物，说明视线通畅 → 看到玩家
+                bool blocked = Physics.Raycast(
+                    (eyePoint ? eyePoint.position : GetEyePos()),
+                    toPlayer,
+                    distToPlayer,
+                    obstructionMask,
+                    QueryTriggerInteraction.Ignore
+                );
+
+                if (!blocked)
                 {
-                    Debug.Log("Player in sight!");
+                    playerInSight = true;
+                    // Debug.Log("Player in sight!");
+                    break; // 已经看到就可以退出
                 }
             }
         }
     }
-    
+
+    private Vector3 GetEyePos()
+    {
+        return transform.position + Vector3.up * eyeHeight;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -43,7 +73,6 @@ public class Eyesight : MonoBehaviour
         Vector3 viewAngleA = DirectionFromAngle(-viewAngle / 2, transform.rotation);
         Vector3 viewAngleB = DirectionFromAngle(viewAngle / 2, transform.rotation);
 
-
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, transform.position + viewAngleA * viewRadius);
         Gizmos.DrawLine(transform.position, transform.position + viewAngleB * viewRadius);
@@ -51,10 +80,7 @@ public class Eyesight : MonoBehaviour
 
     private Vector3 DirectionFromAngle(float angleInDegrees, Quaternion rotation)
     {
-        // 基于角色的旋转调整方向向量
         Vector3 direction = new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-        return rotation * direction; // 应用角色的旋转
+        return rotation * direction;
     }
-
-
 }
