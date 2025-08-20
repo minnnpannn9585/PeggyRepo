@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: ec2fefb2c45dbf945ad4558501f3b522
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArrowSign.1
+    second: {fileID: 2100000, guid: 8e0f526f968522a40baaa448fa93c471, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barrier_Gate_Red_01
+    second: {fileID: 2100000, guid: 78c33132efa9d3d49b97004c6dd04136, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barriers_01
+    second: {fileID: 2100000, guid: af5972250eb12164883fabc396910232, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlinkersSafezone.1
+    second: {fileID: 2100000, guid: 59824129c9c6f33439723d0f31e3a6d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConcreteBarrier_01
+    second: {fileID: 2100000, guid: 8e90fa708e61a474f868d921be746cad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConcreteBarrier_01a
+    second: {fileID: 2100000, guid: 7ef97e4e80e2ce545b3e46f67d5f95a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConcreteBarrier_02
+    second: {fileID: 2100000, guid: b28f8941169df744aae92de7580fbf05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConcreteBarrier_02a
+    second: {fileID: 2100000, guid: ffc2b9e68edd7b4449ed773090c456c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConcreteBarrier_03
+    second: {fileID: 2100000, guid: c2a30158bcbd24643a128b21988061cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete_Bare_01b
+    second: {fileID: 2100000, guid: d8583dc36f2915d4a8c8a6e06f04bc87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete_Bare_03
+    second: {fileID: 2100000, guid: 94fccada46eb7f0428afc9e08633aff6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete_Plates_02
+    second: {fileID: 2100000, guid: 9d700d8073e31ff45b68da97fa51360c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Construction_Pilons
+    second: {fileID: 2100000, guid: b0a265ab6b6023445b349efcdd791884, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eng_ConcreteBlock03
+    second: {fileID: 2100000, guid: 1876bae2d6c9be840aa0ab9bd7519e13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eng_ConcreteBlock04
+    second: {fileID: 2100000, guid: 40d124dcd67b2a241a920ded5bc59f30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eng_Cones01
+    second: {fileID: 2100000, guid: ede43313b6733ec43ab695519ed7f73a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GS_ConcreteBlock01
+    second: {fileID: 2100000, guid: 0027bbd2e31adca4e81f7686235add48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scaffolding_01
+    second: {fileID: 2100000, guid: a86453759f757ef4cb287ba819799764, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Twall_01
+    second: {fileID: 2100000, guid: 6938679e0ac1bad468b7cab7979124b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Twall_01a
+    second: {fileID: 2100000, guid: a16cc76653f8ec7449fd24b33dc72f25, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_ConstructionPylons_01_ALB
+    second: {fileID: 2800000, guid: 8557cff2c21d0084291977227a8acfcc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_ConstructionPylons_01_NRM
+    second: {fileID: 2800000, guid: cf36c6f91d4c55a4890c67a84d965e95, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Barrier_Gate_01_RED_D
+    second: {fileID: 2800000, guid: 4a794d6a30b6cd0469723ba5baa58b0b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Barrier_Gate_01_RED_N
+    second: {fileID: 2800000, guid: b6e3813ed0043e94ebe8e6f84db9df6c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Barriers_01_BC
+    second: {fileID: 2800000, guid: fc83935113388bc4493581afd4c270a7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Barriers_01_N
+    second: {fileID: 2800000, guid: 94a78a574ec8f334d9a91bacafd9a059, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_BlinkerSafezone
+    second: {fileID: 2800000, guid: aa492117b90d96c43ade65fc6ecf2257, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_BlinkerSafezone_normal
+    second: {fileID: 2800000, guid: af268cb3fb3240d4b96ae6c854e6aa4f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreatBlocker01_N
+    second: {fileID: 2800000, guid: d58535e370d269a4984c7913bf203111, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_01_BC
+    second: {fileID: 2800000, guid: 4792f1f0f06d2d34980fb7ae27193eba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_01_N
+    second: {fileID: 2800000, guid: 661c4784efd99d04284ec164230af7b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_01a_BC
+    second: {fileID: 2800000, guid: 0c9e0639f0198e843a6495118e5d33d9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_01a_N
+    second: {fileID: 2800000, guid: 55be4c3199fc89c428bf6b56a0221fd9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_02_BC
+    second: {fileID: 2800000, guid: 597055f321761004994aeb3a21e98fc7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_02_N
+    second: {fileID: 2800000, guid: 18119dd64b149534da5050323e9d3acf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_02a_BC
+    second: {fileID: 2800000, guid: 5068a2f3e52aa5245b508b9aa28a5d70, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_02a_N
+    second: {fileID: 2800000, guid: 0338b504ec888824ab7b0f80ee2d56fc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_03_BC
+    second: {fileID: 2800000, guid: 85493a896b3e2cd418e4d108f7d46341, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteBarrier_03_N
+    second: {fileID: 2800000, guid: 95a1c60818c6e894ba1fab1e33f9b316, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concrete_Bare_01b_BC
+    second: {fileID: 2800000, guid: 94a56cdc908f4d346b21a2d580eba820, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concrete_Bare_01b_N
+    second: {fileID: 2800000, guid: b0318e135a1cd43458d2b73ac09ecdd2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concrete_Bare_03_BC
+    second: {fileID: 2800000, guid: 6e21688f1ea21db499066d8c6ea91048, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concrete_Bare_03_N
+    second: {fileID: 2800000, guid: c91300c985de60e43a6938f4d7cd697a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concrete_Plates_02_BC
+    second: {fileID: 2800000, guid: a55021da0c1eea14a9a801d15438613a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concrete_Plates_02_N
+    second: {fileID: 2800000, guid: d3e9f792f009c044f896dab8804cdc39, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Eng_ConcreteBlock03
+    second: {fileID: 2800000, guid: 7e02766fe02dde04da41c1ea7b33381f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Eng_ConcreteBlock04
+    second: {fileID: 2800000, guid: 38820d64db9b0dc458ac0ea6c845c223, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Eng_Cones01_BC
+    second: {fileID: 2800000, guid: bca2e9ca276075d4e87d76667135e8d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Eng_Cones01_N
+    second: {fileID: 2800000, guid: f23d68b53775995448604f2a140abe36, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_GS_ConcreteBlock01_BC
+    second: {fileID: 2800000, guid: fc59d31e7f0079c46931294d7cb88296, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Scaffolding_01_BC
+    second: {fileID: 2800000, guid: 24625b7a09a7bc14ba99f30fbb70d53a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Scaffolding_01_N
+    second: {fileID: 2800000, guid: 3b70f756147237c4db59488c8dcdf471, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Twall_01_BC
+    second: {fileID: 2800000, guid: 2848c6919399c4a4b8f2595800f7b546, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Twall_01_N
+    second: {fileID: 2800000, guid: 6e22b6b4428dce840bf3a71d5c415875, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Twall_01a_BC
+    second: {fileID: 2800000, guid: f96893746961ed04a95bf2744de40af8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: sm_Arrow_Sign_D
+    second: {fileID: 2800000, guid: 6680fc66666c1864fa1b4f8afe95f463, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: sm_Arrow_Sign_D_normal
+    second: {fileID: 2800000, guid: 8ae91fbbb58e1784e84ef2a53a771f75, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 0
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

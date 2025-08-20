@@ -1,0 +1,305 @@
+fileFormatVersion: 2
+guid: 4f1340f36c31c0044bb2f25c9fa23df9
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hardhat_inst
+    second: {fileID: 2100000, guid: 623614e3f6e1dfc47a5a5872c87a85a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manholes_01.1
+    second: {fileID: 2100000, guid: 439a2e17c8c78b4438cca294f7ea2645, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ToolBox01
+    second: {fileID: 2100000, guid: 8893372755db0a74b83f6827571bd9d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tools
+    second: {fileID: 2100000, guid: b95f5e1a2db6eba4c8dc39f3cc90721a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Worklight
+    second: {fileID: 2100000, guid: 43f0f0794ba343d458029a0d7d935e62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: construction01_metal_af_mat_inst
+    second: {fileID: 2100000, guid: 9c87eada5b26d884f84af225632415f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fiolet_flashlight_mat
+    second: {fileID: 2100000, guid: 465396a89250295489e412275a697a22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_detector
+    second: {fileID: 2100000, guid: c845a83703dc3d047bf3a98ad910cb5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: redandgreen
+    second: {fileID: 2100000, guid: 6e4f9d7121b93ae41b9bb399fce92915, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textures_props
+    second: {fileID: 2100000, guid: e2523286edbf88349876021052e9279a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textures_props_t
+    second: {fileID: 2100000, guid: f05aab7367552564599b44467e0315fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textures_props_t_2
+    second: {fileID: 2100000, guid: 4dd5c6221db3e664cb53a3948600ad9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textures_props_t_gas_can
+    second: {fileID: 2100000, guid: a786837c810fb9746bfb79f4be2fb3c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textures_props_zest
+    second: {fileID: 2100000, guid: 9f61d47d8584e61469cb4d8ef2f8c281, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: texturesmetal3
+    second: {fileID: 2100000, guid: 6accddcccf175f645b9b24a9642f123a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Helmet_N
+    second: {fileID: 2800000, guid: 725ea85dc6855cf4d89e548a19982cca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Halogen_Lamp_D
+    second: {fileID: 2800000, guid: acbbdd256f6dc7a44a12c7321759f62a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Halogen_Lamp_N
+    second: {fileID: 2800000, guid: 55c935ea5bb574a4b85d89ed0f9d6730, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Manholes_01_D
+    second: {fileID: 2800000, guid: 440327f26aba68b418f7906ce4ed34ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Manholes_01_N
+    second: {fileID: 2800000, guid: 313eb575bfa56654dba0240bbc469717, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ToolBox01_BC
+    second: {fileID: 2800000, guid: b7156ab82b1ba864b8362213d6218554, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tools_D
+    second: {fileID: 2800000, guid: 27def145c735ed041ba81071fe1b3c62, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tools_N
+    second: {fileID: 2800000, guid: 1a22251e0ceba2f4482baaced134e822, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: construction01_metal_af_d
+    second: {fileID: 2800000, guid: 9a90ec9ba42d4cb4e83cfef97284cc8c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: construction01_metal_af_n
+    second: {fileID: 2800000, guid: 2a103cdcc3d99d2438fcdbf9c0848268, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fiolet_flashlight
+    second: {fileID: 2800000, guid: 9f4c4420d649eb24e849e990698eb1c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fiolet_flashlight_a
+    second: {fileID: 2800000, guid: 26d7de4fb5a4aab44b3f0923e17c79df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fiolet_flashlight_n
+    second: {fileID: 2800000, guid: c42b2ee3e0970044186b9685af9e598c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hardhat
+    second: {fileID: 2800000, guid: 45e0a23d0a3f7ac49aac6cb7c6cd8fcf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: liftbox01_obj_uni19_ag_d
+    second: {fileID: 2800000, guid: 121ee39e7af199b4f89533ce4f0ba691, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: liftbox01_obj_uni19_ag_n
+    second: {fileID: 2800000, guid: 7091552707baddf45ad71cb080f65ac9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal34_kanistry
+    second: {fileID: 2800000, guid: 4985ae087bc89ac41b9a4f76dcbb2dd7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_detector_prn_as_d
+    second: {fileID: 2800000, guid: 0e8f6b4966c2db1439c2fa321138c4a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_detector_prn_as_n
+    second: {fileID: 2800000, guid: 9d276a0787ea9f04cb4f2573e4860bbd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: props_t_bidon
+    second: {fileID: 2800000, guid: 187504c6d90325e409d2c784a745ed81, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: props_t_gas_can
+    second: {fileID: 2800000, guid: bc69a16820b839e4f81ed434128d8bc9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: props_t_kanistra
+    second: {fileID: 2800000, guid: 62a8a2cf651307e409eddc64ad615173, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: props_t_kanistra2
+    second: {fileID: 2800000, guid: 6f2248c5c841c27479f67c304c055e84, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: props_t_kanistra_zest
+    second: {fileID: 2800000, guid: f8649b60ada579a49a7da216188a03ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: props_t_koleso
+    second: {fileID: 2800000, guid: 7f8b5d72e8042b94aa68532191ac160c, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 0
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

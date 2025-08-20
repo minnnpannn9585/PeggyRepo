@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 5a3e0866819cbde4f99cff034304fa12
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prop_Log
+    second: {fileID: 2100000, guid: 8ce8541a77e6f50459bbf9726ef61f2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prop_Log_SideB
+    second: {fileID: 2100000, guid: 6ba4b13817dc5b4409aee9af96bbd51e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prop_Log_Stem
+    second: {fileID: 2100000, guid: 71ca1acd8a8e2ea4391f5ae81dc8e2b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodBeam_Sk_Mic
+    second: {fileID: 2100000, guid: 86a9d41942168c64aa7295945e425b40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPallet_01
+    second: {fileID: 2100000, guid: c074686cf3592a845bd629d7ad0aa8ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPallet_02
+    second: {fileID: 2100000, guid: 6f06cca426e787446ba8c615c5bceed8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_Trims_Variation
+    second: {fileID: 2100000, guid: 02cdc162c2364e84c90b9410c79bbb04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lumber
+    second: {fileID: 2100000, guid: bd4f276a4ea82b44782ffc3abffc96f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodbeam
+    second: {fileID: 2100000, guid: 08a1b644fac228b4e9a1ffabc07f2437, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: AC_Lumber_Diff
+    second: {fileID: 2800000, guid: 90588607b1b3e904082f28eae5183fbf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: AC_Lumber_Norm
+    second: {fileID: 2800000, guid: d9bcee60ff76b3945b542eabc1e31d84, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: AC_WoodBeam_Diff
+    second: {fileID: 2800000, guid: 5cdad96202f937942a7676a94d41cbc5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: AC_WoodBeam_Norm
+    second: {fileID: 2800000, guid: 9f77cda6bc16e4c4dade3744cfc55f50, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TO14_T_MP_BrokenTree_C
+    second: {fileID: 2800000, guid: 1a94d0a6151471c4f83dfab488dae175, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TO14_T_MP_BrokenTree_N
+    second: {fileID: 2800000, guid: a215bb09aaa9ae248911c59da9baa811, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TO14_T_RDL_Prop_Log_SideA_C
+    second: {fileID: 2800000, guid: 0bef9af4c2ca13148a01b448badcbc4d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TO14_T_RDL_Prop_Log_SideA_N
+    second: {fileID: 2800000, guid: 68791400bc1aa3e458b4f82f8022e40c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TO14_T_RDL_Prop_Log_Stem_C
+    second: {fileID: 2800000, guid: 4931bec8fed2c2d4da245699d549d16c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TO14_T_RDL_Prop_Log_Stem_N
+    second: {fileID: 2800000, guid: d5fd6ffd03d916c4393650e9a357de9c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_WoodPallet_02_BC
+    second: {fileID: 2800000, guid: 96700c3a8ea03ae4b807bbf7990cfd0a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_WoodPallet_02_N
+    second: {fileID: 2800000, guid: 1b6fd8af8b38d584096dd22deef9602b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_WoodPallet_D
+    second: {fileID: 2800000, guid: 409bd88bdef58f541b5546ee9200143a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_WoodPallet_N
+    second: {fileID: 2800000, guid: 087835ada2c7e8d418a379ff350c1c4e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood_Test_Default_BaseColor
+    second: {fileID: 2800000, guid: 76712f6b3d753de4fa2fba849bbee094, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: t_wood_planks_good_n
+    second: {fileID: 2800000, guid: 46be5fc20ac2d4043b48dd6dd9db9deb, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 0
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

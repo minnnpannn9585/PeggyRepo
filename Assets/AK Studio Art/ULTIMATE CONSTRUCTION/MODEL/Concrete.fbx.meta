@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 098007c4cd73ff74abdaa345ade7ca2f
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bricks01
+    second: {fileID: 2100000, guid: c68b4c6f5edaab84e9f05b1fc8f96b6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concred03
+    second: {fileID: 2100000, guid: dc46127342f75df4e80b227d96ab9f42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eng_BrickBlocker01
+    second: {fileID: 2100000, guid: bf70609c39ef81245aafd9900cd23aae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eng_Palette01
+    second: {fileID: 2100000, guid: 16933f53b45ca2842a1a6e0dc2a73be4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eng_Strap01
+    second: {fileID: 2100000, guid: 12c1724267707a64e8d942ceb96568f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IndustrialSet
+    second: {fileID: 2100000, guid: 22f3b5340f8e1894e92fe1c9fd558b77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Scaffold_B_Mat
+    second: {fileID: 2100000, guid: c89a3f1223154274aaa1244a088b11d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rust01b
+    second: {fileID: 2100000, guid: 479606f1f030c6b44bf45a4bf5759f7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelBarrow_01a
+    second: {fileID: 2100000, guid: 59e1aeac18a304742b05d9d688b5f71b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bags
+    second: {fileID: 2100000, guid: ba1cfca0774c49848bc60db11ab8e96f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ballons
+    second: {fileID: 2100000, guid: 24c1c096b7dbccf4086e5edcb0ebedbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ballons_2
+    second: {fileID: 2100000, guid: c67efed7cce29444ab1154def988ba09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrels
+    second: {fileID: 2100000, guid: 3339c48235e0da54b84acaea3e269f66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cartonbox
+    second: {fileID: 2100000, guid: 81d196602c8708d47a95ad57e899466b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_ad
+    second: {fileID: 2100000, guid: ca2316f3b4eca6643816bf6a8f3e8841, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_2_ad
+    second: {fileID: 2100000, guid: 6c50cbb1937409f45889380698e7c589, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_4_ad
+    second: {fileID: 2100000, guid: d5ba7f365ae99214ea681386f7b6def8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mold_d_001_INST.2
+    second: {fileID: 2100000, guid: e8d5da53681948a4299fcd232a021a35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moldconcrete_d_001_INST.3
+    second: {fileID: 2100000, guid: f6a3ef7cf5116924cbab92f7539d4aa7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pallet
+    second: {fileID: 2100000, guid: c37341725743ce640826fe38b67c365a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipesb
+    second: {fileID: 2100000, guid: 1ae3d1903b7eb6d4287839463a76fed7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire_2
+    second: {fileID: 2100000, guid: b833d3696be38184b876d8a81db20a3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood_3_ad
+    second: {fileID: 2100000, guid: 050cbaaf265d73e4c90bcf856be594a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood_box_2_ad
+    second: {fileID: 2100000, guid: 81c0a9f7192cf174d8f38382c8c47aab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodbox_ad
+    second: {fileID: 2100000, guid: 78b0d64c974797641950f8dfa99ab1dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wooded_ad
+    second: {fileID: 2100000, guid: a6917405b919b7f4b89daa53a26fbd4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodenbox
+    second: {fileID: 2100000, guid: 5daac29cf7b438345a013920f29fd853, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_WheelBarrel_01_ALB
+    second: {fileID: 2800000, guid: 2417784d9b1697844b8b8d4439574be6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TX_WheelBarrel_01_NRM
+    second: {fileID: 2800000, guid: c97efb041f2dd8f4a8c27304cde1efb6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Bricks_A
+    second: {fileID: 2800000, guid: 26efde11271bdbe44885f88d6945f2f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Bricks_N
+    second: {fileID: 2800000, guid: 02ade9584a44f634cbdafdc0d9e942eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concret_Clear2_A
+    second: {fileID: 2800000, guid: 6fe01a3fc2e197a40828ab9f7139d117, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Concret_Clear2_N
+    second: {fileID: 2800000, guid: 6b1ccaef3aee546419b424483e2e710f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ConcreteDirty01
+    second: {fileID: 2800000, guid: d42670401c7f7ff45ba534c7ca5a2031, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Eng_Strap01
+    second: {fileID: 2800000, guid: f844e36792d06af40939cd14de64c8a1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_IndustrialSet_A
+    second: {fileID: 2800000, guid: 73d70d57d7bda9440a27c2955fb69a65, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_IndustrialSet_N
+    second: {fileID: 2800000, guid: 7ff33a7bb965a944b9e1d6ed30f5c98a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Rust01_A
+    second: {fileID: 2800000, guid: 971a955a7ef1ff1468fc4925c3b8dffe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Rust01_N
+    second: {fileID: 2800000, guid: 2dfdc236567e0e14b81f608a14b76581, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Scaffold_B
+    second: {fileID: 2800000, guid: c818dd71ddd1faf46a1846d2510f3cc3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_Scaffold_N
+    second: {fileID: 2800000, guid: 14b255114be6621458b01b9d646e1ff9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_WoodFloor01Dirty_AO
+    second: {fileID: 2800000, guid: 338d3301be253334bbeebc46fba4574f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_WoodWhite01_N
+    second: {fileID: 2800000, guid: c66a89cb9c7b6914fa9fb6402c688b91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bags_D
+    second: {fileID: 2800000, guid: d9ca52be7d7a4a14b8937bd9ded9079e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bags_N
+    second: {fileID: 2800000, guid: c0d9e6a4c691579418c7a4905844f5de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ballons_D
+    second: {fileID: 2800000, guid: 16a4ab0cebe5ef14f9b6a681289f74e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ballons_N
+    second: {fileID: 2800000, guid: d328722db528166409e1c0d83abc61e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: barrels_D
+    second: {fileID: 2800000, guid: ca9939af077549f4292c557018945b8d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: barrels_N
+    second: {fileID: 2800000, guid: 57e8c8f4471f1fc47aff9d791f46b3ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cartonbox_D
+    second: {fileID: 2800000, guid: 65dab8d63dd79cb49be64adc0d8659e6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cartonbox_N
+    second: {fileID: 2800000, guid: 0419031a31da1214a86e2758077e6cb0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_2
+    second: {fileID: 2800000, guid: 5ea75a65d4afad54d8d84879811b4bb0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_d
+    second: {fileID: 2800000, guid: d12153dfda4a8cf4b9cb1f78fbb0c8ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_d4
+    second: {fileID: 2800000, guid: c5497ad88dbddd645a283c7cea9e3f2e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal_d5
+    second: {fileID: 2800000, guid: dcbbacb4f90502e4b8b6f9f6feccec9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mold_d_001
+    second: {fileID: 2800000, guid: 0b622a57cc266e445a536180e94f1451, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mold_n_001
+    second: {fileID: 2800000, guid: 71cbb5660533f2e438f31987a429eca1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: moldconcrete_d_001
+    second: {fileID: 2800000, guid: 9ec0834bce39c5b419be2df6f20d7208, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: moldconcrete_n_001
+    second: {fileID: 2800000, guid: 2d6c29964264f3449b79effca9568e38, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pallet_D
+    second: {fileID: 2800000, guid: 0ac721f08af409348a2514db9f3d2e6b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pallet_N
+    second: {fileID: 2800000, guid: 220f443482bec9945a52c8010294545a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe02_ai_d
+    second: {fileID: 2800000, guid: 0cfceb834a06b8c4dbc870e43ceb0838, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe02_ai_n
+    second: {fileID: 2800000, guid: a77fb76057c6da64eb919877ffd8e459, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tire_D
+    second: {fileID: 2800000, guid: 5036b8be57227954a886d39266ef8984, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tire_N
+    second: {fileID: 2800000, guid: a9a5c5609fb97c04b846f8ce6eb5b0c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_box_2
+    second: {fileID: 2800000, guid: 718b4eb7074867e48a63b32d980fed92, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_doski_3
+    second: {fileID: 2800000, guid: 536340e2c0301074bbf171d3b7148b05, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_woodbox
+    second: {fileID: 2800000, guid: 5b9394d89ea6c434f93b83513e508e28, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wooden_box_ai_d
+    second: {fileID: 2800000, guid: 38b08b4b36ec02d4dbed8cc8ff919acb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wooden_box_ai_n
+    second: {fileID: 2800000, guid: 5f1a231bba0074a4eb351559547802f8, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 0
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
