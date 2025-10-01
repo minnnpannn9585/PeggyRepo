@@ -16,6 +16,17 @@ public class LightMoveableAI : MonoBehaviour
     public Animator pointLightAnimator;    // 灯光的 Animator
     private string flashStateName = "LightBlink";  // 闪烁动画的状态名
 
+    // ===== 新增：在灯下停留与冷却 =====
+    [Header("Light Attraction")]
+    public float lingerAtLightSeconds = 5f;    // 到达灯下后停留时长
+    public float reAttractCooldown = 2f;       // 离开后冷却（这里实际上不会再吸引，因为只吸引一次，但保留以备扩展）
+    private bool isLingering = false;          // 是否在灯下驻留
+    private float nextAttractTime = 0f;        // 再次允许被吸引的时间戳
+    private Coroutine lingerRoutine = null;
+
+    // ===== 新增：一次性吸引开关（此关/此局只吸引一次）=====
+    private bool attractedOnce = false;
+
     private void Awake()
     {
         if (nma == null) nma = GetComponent<NavMeshAgent>();
@@ -44,22 +55,22 @@ public class LightMoveableAI : MonoBehaviour
 
     private void Update()
     {
-        // 根据动画切换“去灯光/巡逻”状态
-        AnimatorStateInfo animState = pointLightAnimator.GetCurrentAnimatorStateInfo(0);
-        if (animState.IsName(flashStateName))
+        // —— 改动点 1：只在“未前往/未驻留/冷却结束/且还没吸引过一次”时，才响应动画闪烁
+        if (!attractedOnce && !isGoingToLight && !isLingering && Time.time >= nextAttractTime && pointLightAnimator)
         {
-            if (!isGoingToLight)
+            AnimatorStateInfo animState = pointLightAnimator.GetCurrentAnimatorStateInfo(0);
+            if (animState.IsName(flashStateName))
             {
+                attractedOnce = true;       // 第一次触发就锁死：后续不再响应
                 isGoingToLight = true;
-                SetDestination(lightTrans.position);
+                nma.isStopped = false;
+                if (lightTrans != null)
+                    SetDestination(lightTrans.position);
             }
         }
-        else if (isGoingToLight)
-        {
-            // 闪烁结束，恢复巡逻
-            isGoingToLight = false;
-            SetDestination(points[index].position);
-        }
+
+        // —— 删除：依赖“动画结束”来恢复巡逻的逻辑
+        // 现在恢复巡逻由“到达灯下后等待5s”的协程负责
 
         if (nma.pathPending) return; // 路径还在计算中
 
@@ -70,7 +81,11 @@ public class LightMoveableAI : MonoBehaviour
         {
             if (isGoingToLight)
             {
-                // 到达灯光就停留，等闪烁结束会自动恢复巡逻
+                // 到达灯光后，启动5s驻留，然后恢复巡逻（只触发一次）
+                if (!isLingering && lingerRoutine == null)
+                {
+                    lingerRoutine = StartCoroutine(LingerThenResume());
+                }
                 return;
             }
 
@@ -78,6 +93,26 @@ public class LightMoveableAI : MonoBehaviour
             index = (index + 1) % points.Length;
             SetDestination(points[index].position);
         }
+    }
+
+    private IEnumerator LingerThenResume()
+    {
+        isLingering = true;
+        nma.isStopped = true;
+        nma.ResetPath(); // 清掉路径，防止到达判定抖动
+
+        // 用真实时间，不受 Time.timeScale 影响
+        yield return new WaitForSecondsRealtime(lingerAtLightSeconds);
+
+        // 驻留结束：恢复巡逻（注意：attractedOnce 已经锁死，后续不会再被吸引）
+        isLingering = false;
+        isGoingToLight = false;
+        nma.isStopped = false;
+        nextAttractTime = Time.time + reAttractCooldown;
+
+        // 恢复当前巡逻点（也可以改成下一个点）
+        SetDestination(points[index].position);
+        lingerRoutine = null;
     }
 
     private void SetDestination(Vector3 dst)
@@ -88,5 +123,19 @@ public class LightMoveableAI : MonoBehaviour
             nma.SetDestination(hit.position);
         else
             nma.SetDestination(dst);
+    }
+
+    // —— 可选：如果需要在“下一关/重开局”重新允许被吸引，可在外部调用这个方法
+    public void ResetAttractionOnce()
+    {
+        attractedOnce = false;
+        isGoingToLight = false;
+        isLingering = false;
+        nextAttractTime = 0f;
+        if (lingerRoutine != null)
+        {
+            StopCoroutine(lingerRoutine);
+            lingerRoutine = null;
+        }
     }
 }

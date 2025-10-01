@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LightMoveable : MonoBehaviour
 {
-    public Transform[] points;         // 巡逻路径点
-    private int index = 0;             // 当前目标点索引
+    public NavMeshAgent nma;
+    public Transform[] points;
+    public int index = 0;
+    public float speed = 0f;
+    public float rotationSpeed = 0f;
+    private Vector3 target;
 
-    public float speed = 1.0f;         // 移动速度
-    public float rotationSpeed = 5f;   // 旋转速度（控制转向平滑度）
-    private Vector3 target;            // 当前目标点坐标
+    private bool isDoingLight = false;
+    private bool isFlashLight = false;
 
-    private bool isGoingToLight = false;   // 是否正在前往灯光
-    public Transform lightTrans;           // 灯光的位置
-
-    public Animator pointLightAnimator;    // 灯光的 Animator
-    private string flashStateName = "LightBlink";  // 闪烁动画的状态名
+    public Animator pointLightAnimator;
+    private string flashStateName = "LightBlink";
 
     private void Start()
     {
@@ -24,17 +25,19 @@ public class LightMoveable : MonoBehaviour
 
     private void Update()
     {
-        // 检查动画当前是否处于闪烁状态
-        AnimatorStateInfo animState = pointLightAnimator.GetCurrentAnimatorStateInfo(0);
-        if (animState.IsName(flashStateName))
+        AnimatorStateInfo state = pointLightAnimator.GetCurrentAnimatorStateInfo(0);
+        if (state.IsName(flashStateName))
         {
-            isGoingToLight = true;
+            isDoingLight = true;
+        }
+        else
+        {
+            isDoingLight = false;
         }
 
-        if (!isGoingToLight)
+        if (!isDoingLight)
         {
             MoveTowards(target);
-
             if (Vector3.Distance(transform.position, target) < 0.1f)
             {
                 index++;
@@ -47,7 +50,7 @@ public class LightMoveable : MonoBehaviour
         }
         else
         {
-            MoveTowards(lightTrans.position);
+            MoveTowards(LightTrans.position);
         }
     }
 
@@ -57,13 +60,12 @@ public class LightMoveable : MonoBehaviour
 
         if (direction != Vector3.zero)
         {
-            // 平滑旋转朝向目标方向
-            Quaternion targetRotation = Quaternion.LookRotation(direction.normalized);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            Quaternion toRotation = Quaternion.LookRotation(direction.normalized);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
-        // 向目标移动
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+
+        nma.SetDestination(destination);
     }
 }
-

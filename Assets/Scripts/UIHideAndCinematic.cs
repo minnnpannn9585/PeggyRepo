@@ -1,34 +1,34 @@
-using UnityEngine;
-using UnityEngine.Playables;   // Èç¹ûÄãÓÃ Timeline£¬¿ÉÑ¡
-// using Cinemachine;         // Èç¹ûÄãÓÃ Cinemachine£¬È¡ÏûÕâĞĞ×¢ÊÍ
+ï»¿using UnityEngine;
+using UnityEngine.Playables;   // å¦‚æœä½ ç”¨ Timelineï¼Œå¯é€‰
+// using Cinemachine;         // å¦‚æœä½ ç”¨ Cinemachineï¼Œå–æ¶ˆè¿™è¡Œæ³¨é‡Š
 
 public class UIHideAndCinematic : MonoBehaviour
 {
-    [Header("´¥·¢·½Ê½")]
-    [Tooltip(">=0 Ê±ÆôÓÃµ¹¼ÆÊ±£»<0 ½ûÓÃµ¹¼ÆÊ±£¬½öÖ§³Ö×ó¼ü¹Ø±Õ")]
+    [Header("è§¦å‘æ–¹å¼")]
+    [Tooltip(">=0 æ—¶å¯ç”¨å€’è®¡æ—¶ï¼›<0 ç¦ç”¨å€’è®¡æ—¶ï¼Œä»…æ”¯æŒå·¦é”®å…³é—­")]
     public float timer = -1f;
 
-    [Header("ÒªÇĞ»»µÄ¶ÔÏó£¨ÈÎÑ¡£©")]
-    public GameObject thingToClose;   // ÀıÈç MainCamera
-    public GameObject thingToOpen;    // ÀıÈç Camera01£¨´ø¶¯»­/Timeline£©
+    [Header("è¦åˆ‡æ¢çš„å¯¹è±¡ï¼ˆä»»é€‰ï¼‰")]
+    public GameObject thingToClose;   // ä¾‹å¦‚ MainCamera
+    public GameObject thingToOpen;    // ä¾‹å¦‚ Camera01ï¼ˆå¸¦åŠ¨ç”»/Timelineï¼‰
 
-    [Header("¿ÉÑ¡£º¶¯»­/Ê±¼äÏß")]
-    public Animator animator;         // ÈôÇĞ¾µÍ·ĞèÒª´¥·¢ Animator
+    [Header("å¯é€‰ï¼šåŠ¨ç”»/æ—¶é—´çº¿")]
+    public Animator animator;         // è‹¥åˆ‡é•œå¤´éœ€è¦è§¦å‘ Animator
     public string animatorTrigger = "Play";
-    public PlayableDirector timeline; // ÈôÓÃ Timeline£¬¹Ø±Õ UI Ê±²¥·Å
+    public PlayableDirector timeline; // è‹¥ç”¨ Timelineï¼Œå…³é—­ UI æ—¶æ’­æ”¾
 
-    [Header("UI ĞĞÎª")]
-    [Tooltip("¹Ø±ÕÊ±ÊÇÒş²Ø£¨ÍÆ¼ö£©»¹ÊÇÏú»Ù UI ¶ÔÏó")]
+    [Header("UI è¡Œä¸º")]
+    [Tooltip("å…³é—­æ—¶æ˜¯éšè—ï¼ˆæ¨èï¼‰è¿˜æ˜¯é”€æ¯ UI å¯¹è±¡")]
     public bool destroyThisUI = false;
 
-    bool _armed;     // ·À¶¶£º±ÜÃâ¸ÕÏÔÊ¾Á¢¿Ì±»µã»÷¹Øµô
+    bool _armed;     // é˜²æŠ–ï¼šé¿å…åˆšæ˜¾ç¤ºç«‹åˆ»è¢«ç‚¹å‡»å…³æ‰
     bool _done;
 
     void OnEnable()
     {
         _armed = false;
         _done = false;
-        // ÏÂÒ»Ö¡²ÅÔÊĞíµã»÷£¬·ÀÖ¹Îó´¥
+        // ä¸‹ä¸€å¸§æ‰å…è®¸ç‚¹å‡»ï¼Œé˜²æ­¢è¯¯è§¦
         StartCoroutine(ArmNextFrame());
     }
 
@@ -42,14 +42,14 @@ public class UIHideAndCinematic : MonoBehaviour
     {
         if (_done) return;
 
-        // 1) ×ó¼üÁ¢¼´¹Ø±Õ
+        // 1) å·¦é”®ç«‹å³å…³é—­
         if (_armed && Input.GetMouseButtonDown(0))
         {
             Finish();
             return;
         }
 
-        // 2) ¿ÉÑ¡£ºµ¹¼ÆÊ±µ½µãºó¹Ø±Õ
+        // 2) å¯é€‰ï¼šå€’è®¡æ—¶åˆ°ç‚¹åå…³é—­
         if (timer >= 0f)
         {
             timer -= Time.deltaTime;
@@ -65,18 +65,18 @@ public class UIHideAndCinematic : MonoBehaviour
         if (_done) return;
         _done = true;
 
-        // ÇĞ»»Ïà»ú/ÎïÌå
+        // åˆ‡æ¢ç›¸æœº/ç‰©ä½“
         if (thingToClose) thingToClose.SetActive(false);
         if (thingToOpen) thingToOpen.SetActive(true);
 
-        // ´¥·¢¶¯»­/Ê±¼äÏß£¨ÈÎÑ¡ÆäÒ»»ò¶¼Òª£©
+        // è§¦å‘åŠ¨ç”»/æ—¶é—´çº¿ï¼ˆä»»é€‰å…¶ä¸€æˆ–éƒ½è¦ï¼‰
         if (animator && !string.IsNullOrEmpty(animatorTrigger))
             animator.SetTrigger(animatorTrigger);
 
         if (timeline)
             timeline.Play();
 
-        // ¹Ø±ÕÕâÕÅ UI
+        // å…³é—­è¿™å¼  UI
         if (destroyThisUI) Destroy(gameObject);
         else gameObject.SetActive(false);
     }

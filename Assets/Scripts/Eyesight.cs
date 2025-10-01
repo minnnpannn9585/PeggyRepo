@@ -1,86 +1,122 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Eyesight : MonoBehaviour
 {
-    public float viewRadius = 50f;      // 视野半径
-    [Range(0, 360)]
-    public float viewAngle = 60f;       // 视野角度
+    [Header("FOV")]
+    public float viewRadius = 50f;
+    [Range(0, 360)] public float viewAngle = 60f;
 
-    public LayerMask targetMask;        // 玩家所在层（建议 Inspector 勾 Player）
-    public LayerMask obstructionMask;   // ✅ 新增：遮挡层（墙体/家具等，不包含 Player）
+    [Header("Layer Masks")]
+    public LayerMask targetMask;        
+    public LayerMask obstructionMask;   
 
-    [Header("视线射线起点（可选）")]
-    public Transform eyePoint;          // 为空时用 transform.position + eyeHeight
+    [Header("Eye Origin")]
+    public Transform eyePoint;          
     public float eyeHeight = 1.7f;
 
-    [HideInInspector] public bool playerInSight;  // ✅ 新增：给外部脚本读取
+    [Header("稳定判定（防抖）")]
+    public float requiredVisibleSeconds = 1.0f;   
+    public bool useDecayWhenHidden = true;        
+    public float hiddenDecayPerSecond = 2.0f;     
+    public float exitGraceSeconds = 0.15f;        
+
+    [HideInInspector] public bool playerInSight;  
+    public float visibleProgress01 => Mathf.Clamp01(visibleTimer / requiredVisibleSeconds); 
+
+    private float visibleTimer = 0f;   
+    private float lastSeenTime = -999f;
+    private float suppressUntil = 0f;  
 
     void Start()
     {
-        if (targetMask == 0)
-            targetMask = LayerMask.GetMask("Player");
-        // obstructionMask 请在 Inspector 里设置（把会遮挡视线的层勾上，不要勾 Player）
+        if (targetMask == 0) targetMask = LayerMask.GetMask("Player");
     }
 
     void Update()
     {
-        playerInSight = false; // 每帧重置
+        if (Time.time < suppressUntil)
+        {
+            playerInSight = false;
+            visibleTimer = 0f;
+            return;
+        }
+
+        Vector3 eyePos = eyePoint ? eyePoint.position : (transform.position + Vector3.up * eyeHeight);
+        Vector3 eyeFwd = eyePoint ? eyePoint.forward : transform.forward;
+
+        bool seenThisFrame = false;
 
         // 在视野半径内找玩家
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-        foreach (Collider target in targetsInViewRadius)
+        var targets = Physics.OverlapSphere(eyePos, viewRadius, targetMask, QueryTriggerInteraction.Collide);
+        foreach (var t in targets)
         {
-            Transform player = target.transform;
-            Vector3 toPlayer = (player.position - (eyePoint ? eyePoint.position : GetEyePos())).normalized;
+            var player = t.transform;
+            Vector3 toPlayer = player.position - eyePos;
+            float dist = toPlayer.magnitude;
+            if (dist < 0.001f) continue;
 
-            // 角度判断
-            if (Vector3.Angle((eyePoint ? eyePoint.forward : transform.forward), toPlayer) < viewAngle / 2f)
+            Vector3 dir = toPlayer / dist;
+            if (Vector3.Angle(eyeFwd, dir) > viewAngle * 0.5f) continue;
+
+            // 射线检查：只打在遮挡层上
+            bool blocked = Physics.Raycast(eyePos, dir, dist, obstructionMask, QueryTriggerInteraction.Ignore);
+            if (!blocked)
             {
-                float distToPlayer = Vector3.Distance((eyePoint ? eyePoint.position : GetEyePos()), player.position);
-
-                // ✅ 关键改动：只用“遮挡层”做 Raycast，忽略玩家自身
-                // 如果射线没有击中任何遮挡物，说明视线通畅 → 看到玩家
-                bool blocked = Physics.Raycast(
-                    (eyePoint ? eyePoint.position : GetEyePos()),
-                    toPlayer,
-                    distToPlayer,
-                    obstructionMask,
-                    QueryTriggerInteraction.Ignore
-                );
-
-                if (!blocked)
-                {
-                    playerInSight = true;
-                    // Debug.Log("Player in sight!");
-                    break; // 已经看到就可以退出
-                }
+                seenThisFrame = true;
+                lastSeenTime = Time.time;
+                break; 
             }
+        }
+
+        playerInSight = seenThisFrame;
+
+        // ——“连续看到”计时逻辑——
+        if (seenThisFrame || Time.time - lastSeenTime <= exitGraceSeconds)
+        {
+            // 本帧看到（或处于短暂宽限期）：累加
+            visibleTimer = Mathf.Min(requiredVisibleSeconds, visibleTimer + Time.deltaTime);
+        }
+        else
+        {
+            // 本帧未看到：清零或衰减
+            if (useDecayWhenHidden)
+                visibleTimer = Mathf.Max(0f, visibleTimer - hiddenDecayPerSecond * Time.deltaTime);
+            else
+                visibleTimer = 0f;
+        }
+
+        // ——达到阈值才算“真正被看见”——
+        if (visibleTimer >= requiredVisibleSeconds)
+        {
+            // 这里触发一次“被抓到”的事件（只需触发一次）
+            // 建议你的 GameOver 管理器内部自己做冷却，避免每帧重复弹窗
+            GameOverOnSight.Instance?.ReportSpotted();
+            // 触发后可选：清零或保持满格，根据你的需求
+            visibleTimer = 0f; // 触发后清空，防止重复触发
         }
     }
 
-    private Vector3 GetEyePos()
+    /// <summary>相机/楼层切换、瞬移时调用：在一小段时间内完全不判定</summary>
+    public void Suppress(float seconds)
     {
-        return transform.position + Vector3.up * eyeHeight;
+        suppressUntil = Mathf.Max(suppressUntil, Time.time + seconds);
+        visibleTimer = 0f;
+        playerInSight = false;
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, viewRadius);
-
-        Vector3 viewAngleA = DirectionFromAngle(-viewAngle / 2, transform.rotation);
-        Vector3 viewAngleB = DirectionFromAngle(viewAngle / 2, transform.rotation);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + viewAngleA * viewRadius);
-        Gizmos.DrawLine(transform.position, transform.position + viewAngleB * viewRadius);
+        Vector3 origin = eyePoint ? eyePoint.position : (transform.position + Vector3.up * eyeHeight);
+        Gizmos.color = Color.red; Gizmos.DrawWireSphere(origin, viewRadius);
+        Vector3 A = DirectionFromAngle(-viewAngle / 2, transform.rotation);
+        Vector3 B = DirectionFromAngle(+viewAngle / 2, transform.rotation);
+        Gizmos.color = Color.green; Gizmos.DrawLine(origin, origin + A * viewRadius);
+        Gizmos.DrawLine(origin, origin + B * viewRadius);
     }
 
-    private Vector3 DirectionFromAngle(float angleInDegrees, Quaternion rotation)
+    private Vector3 DirectionFromAngle(float deg, Quaternion rot)
     {
-        Vector3 direction = new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-        return rotation * direction;
+        Vector3 dir = new Vector3(Mathf.Sin(deg * Mathf.Deg2Rad), 0, Mathf.Cos(deg * Mathf.Deg2Rad));
+        return rot * dir;
     }
 }
