@@ -17,6 +17,7 @@ public class LightMoveable : MonoBehaviour
 
     public Animator pointLightAnimator;
     private string flashStateName = "LightBlink";
+    public Transform lightTrans;
 
     private void Start()
     {
@@ -50,7 +51,7 @@ public class LightMoveable : MonoBehaviour
         }
         else
         {
-            MoveTowards(LightTrans.position);
+            MoveTowards(lightTrans.position);
         }
     }
 
