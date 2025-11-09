@@ -24,8 +24,12 @@ public class EnemyAlertListener : MonoBehaviour
         // 自动把同物体上的 MoveableAI 加入禁用列表（避免你忘了拖）
         if (scriptsToDisable == null || scriptsToDisable.Length == 0)
         {
-            var auto = GetComponent<MoveableAI>();
-            if (auto) scriptsToDisable = new MonoBehaviour[] { auto };
+            var list = new System.Collections.Generic.List<MonoBehaviour>();
+            var m1 = GetComponent<MoveableAI>();
+            if (m1) list.Add(m1);
+            var m2 = GetComponent<LightMoveableAI>();
+            if (m2) list.Add(m2);
+            scriptsToDisable = list.ToArray();
         }
     }
 

@@ -125,6 +125,20 @@ public class LightMoveableAI : MonoBehaviour
             nma.SetDestination(dst);
     }
 
+    void OnDisable()
+    {
+        // 停掉灯下驻留等协程，清理状态，避免重新启用后“回写”
+        if (lingerRoutine != null)
+        {
+            StopCoroutine(lingerRoutine);
+            lingerRoutine = null;
+        }
+        isGoingToLight = false;
+        isLingering = false;
+        // 确保Agent不被停住
+        if (nma) nma.isStopped = false;
+    }
+
     // —— 可选：如果需要在“下一关/重开局”重新允许被吸引，可在外部调用这个方法
     public void ResetAttractionOnce()
     {
